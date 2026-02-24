@@ -1,0 +1,286 @@
+{% extends "base.html" %}
+{% block title %}User Dashboard — IT Ticket Engine{% endblock %}
+
+{% block content %}
+<div class="main-content">
+
+    <div class="page-header">
+        <h1>📋 User Dashboard</h1>
+        <p>Hello, {{ session.user_name }}! Raise a new ticket or track an existing one.</p>
+    </div>
+
+    <!-- TABS -->
+    <div class="tabs">
+        <button class="tab-btn active" data-tab="raise-tab">🆕 Raise a Ticket</button>
+        <button class="tab-btn" data-tab="status-tab">🔍 Check Ticket Status</button>
+    </div>
+
+    <!-- ── TAB: RAISE A TICKET ─────────────────────────────────── -->
+    <div id="raise-tab" class="tab-pane active">
+
+        <div class="two-col">
+
+            <!-- FORM -->
+            <div class="card">
+                <h3 class="section-title">📝 Describe Your Issue</h3>
+                <form method="POST" action="{{ url_for('dashboard') }}" id="ticket-form">
+
+                    <div class="form-group">
+                        <label class="form-label" for="description">Issue Description *</label>
+                        <textarea class="form-control" id="description" name="description" rows="5"
+                            placeholder="e.g. My laptop cannot connect to the office Wi-Fi after a Windows update…"
+                            required></textarea>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label class="form-label" for="category">Category</label>
+                            <select class="form-control" id="category" name="category">
+                                {% for cat in categories %}
+                                <option value="{{ cat }}" {% if cat=='Other' %}selected{% endif %}>{{ cat }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="priority">Priority</label>
+                            <select class="form-control" id="priority" name="priority">
+                                {% for p in priorities %}
+                                <option value="{{ p }}" {% if p=='Medium' %}selected{% endif %}>{{ p }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-full" id="submit-btn">
+                        🚀 Submit Ticket
+                    </button>
+                </form>
+            </div>
+
+            <!-- INFO / GUIDE -->
+            <div>
+                <div class="card mb-2">
+                    <h4 style="margin-bottom:0.7rem;">💡 Tips for better results</h4>
+                    <ul style="color:var(--text-secondary);font-size:0.88rem;padding-left:1.2rem;line-height:2;">
+                        <li>Be specific about error messages</li>
+                        <li>Mention the device or software involved</li>
+                        <li>Describe what you already tried</li>
+                        <li>Include when the issue started</li>
+                    </ul>
+                </div>
+                {% if last_ticket_id %}
+                <div class="card" style="border-color:rgba(34,197,94,0.3);">
+                    <p class="text-success" style="font-weight:700;margin-bottom:0.3rem;">✅ Last Ticket Created</p>
+                    <p class="text-indent">Ticket ID: <strong>#{{ last_ticket_id }}</strong></p>
+                    <a href="{{ url_for('ticket_status', ticket_id=last_ticket_id) }}"
+                        class="btn btn-secondary btn-sm mt-1">
+                        View Status →
+                    </a>
+                </div>
+                {% endif %}
+            </div>
+
+        </div>
+
+        <!-- ── AI SUGGESTIONS ────────────────────────────────────── -->
+        {% if suggestions %}
+        <hr class="section-divider" />
+        <h3 class="section-title">🤖 Top AI-Suggested Resolutions
+            <span class="score-pill">Ticket #{{ last_ticket_id }}</span>
+        </h3>
+
+        <div class="suggestion-list">
+            {% for s in suggestions %}
+            {% set score_pct = (s.similarity_score * 100) | round(1) %}
+            <div class="suggestion-card">
+                <div class="suggestion-header" onclick="toggleSuggestion({{ loop.index }})">
+                    <div class="suggestion-title">
+                        <span>💡 Suggestion {{ loop.index }}</span>
+                        <span class="badge badge-open">{{ s.category }}</span>
+                        <span
+                            class="badge badge-{% if s.priority == 'High' %}escalated{% elif s.priority == 'Low' %}resolved{% else %}inprogress{% endif %}">
+                            {{ s.priority }}
+                        </span>
+                    </div>
+                    <div class="suggestion-meta">
+                        <span class="score-pill">{{ score_pct }}% match</span>
+                        <span id="chevron-{{ loop.index }}" style="transition:transform 0.2s;">
+                            {% if loop.index == 1 %}▲{% else %}▼{% endif %}
+                        </span>
+                    </div>
+                </div>
+                <div class="suggestion-body {% if loop.index != 1 %}hidden{% endif %}" id="body-{{ loop.index }}">
+                    <div class="info-block">
+                        <div class="block-label">📄 Historical Issue</div>
+                        {{ s.description }}
+                    </div>
+                    <div class="resolution-block">
+                        <div class="block-label">✅ Suggested Resolution</div>
+                        {{ s.resolution }}
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+        <!-- FEEDBACK -->
+        {% if not feedback_done %}
+        <div class="feedback-section">
+            <h4>Was the suggested resolution helpful?</h4>
+            <div class="feedback-btns">
+                <button class="btn btn-success" id="btn-helpful" onclick="submitFeedback({{ last_ticket_id }}, true)">
+                    👍 Helpful — Mark Resolved
+                </button>
+                <button class="btn btn-danger" id="btn-not-helpful"
+                    onclick="submitFeedback({{ last_ticket_id }}, false)">
+                    👎 Not Helpful — Escalate
+                </button>
+            </div>
+            <div id="feedback-result" style="display:none;" class="feedback-result mt-2"></div>
+        </div>
+        {% else %}
+        <div class="feedback-section">
+            <div class="feedback-result helpful">✅ Feedback recorded. Thank you!</div>
+        </div>
+        {% endif %}
+
+        {% endif %}
+    </div>
+
+    <!-- ── TAB: CHECK STATUS ──────────────────────────────────── -->
+    <div id="status-tab" class="tab-pane">
+        <h3 class="section-title">🎫 My Tickets</h3>
+
+        {% if user_tickets %}
+        <div class="table-wrapper">
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>#ID</th>
+                        <th>Description</th>
+                        <th>Category</th>
+                        <th>Priority</th>
+                        <th>Status</th>
+                        <th>Escalated</th>
+                        <th>AI Score</th>
+                        <th>Created</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for t in user_tickets %}
+                    <tr>
+                        <td><strong>#{{ t.id }}</strong></td>
+                        <td class="desc-cell" title="{{ t.description }}"
+                            style="max-width:220px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">
+                            {{ t.description }}</td>
+                        <td>{{ t.category or '—' }}</td>
+                        <td>
+                            {% if t.priority == 'High' %}<span class="badge badge-escalated">{{ t.priority }}</span>
+                            {% elif t.priority == 'Low' %}<span class="badge badge-resolved">{{ t.priority }}</span>
+                            {% else %}<span class="badge badge-inprogress">{{ t.priority }}</span>{% endif %}
+                        </td>
+                        <td>
+                            {% set s = t.status %}
+                            {% if s == 'Open' %} <span class="badge badge-open">{{ s }}</span>
+                            {% elif s == 'Resolved' %} <span class="badge badge-resolved">{{ s }}</span>
+                            {% elif s == 'Pending' %} <span class="badge badge-pending">{{ s }}</span>
+                            {% elif s == 'Closed' %} <span class="badge badge-closed">{{ s }}</span>
+                            {% else %} <span class="badge badge-inprogress">{{ s }}</span>
+                            {% endif %}
+                        </td>
+                        <td>
+                            {% if t.escalation_flag %}
+                            <span class="badge badge-escalated">🔴 Yes</span>
+                            {% else %}
+                            <span class="badge badge-resolved">🟢 No</span>
+                            {% endif %}
+                        </td>
+                        <td>
+                            {% if t.similarity_score %}
+                            <span class="score-pill">{{ (t.similarity_score * 100) | round(1) }}%</span>
+                            {% else %}—{% endif %}
+                        </td>
+                        <td class="text-muted" style="font-size:0.78rem;">
+                            {{ t.created_at[:16] if t.created_at else '—' }}
+                        </td>
+                        <td>
+                            <a href="{{ url_for('ticket_status', ticket_id=t.id) }}"
+                                class="btn btn-secondary btn-sm">View →</a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <p class="text-muted mt-1" style="font-size:0.8rem;">{{ user_tickets|length }} ticket(s) total</p>
+
+        {% else %}
+        <div class="empty-state">
+            <span class="empty-icon">🎫</span>
+            <p>You haven't raised any tickets yet.</p>
+            <button class="btn btn-primary btn-sm" onclick="document.querySelector('[data-tab=raise-tab]').click()">
+                ➕ Raise your first ticket
+            </button>
+        </div>
+        {% endif %}
+    </div>
+
+</div>
+
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    function toggleSuggestion(idx) {
+        const body = document.getElementById('body-' + idx);
+        const chevron = document.getElementById('chevron-' + idx);
+        const isHidden = body.classList.toggle('hidden');
+        chevron.textContent = isHidden ? '▼' : '▲';
+    }
+
+    function submitFeedback(ticketId, helpful) {
+        const btnH = document.getElementById('btn-helpful');
+        const btnN = document.getElementById('btn-not-helpful');
+        const result = document.getElementById('feedback-result');
+        btnH.disabled = btnN.disabled = true;
+        btnH.innerHTML = btnN.innerHTML = '<span class="spinner"></span>';
+
+        fetch(`/feedback/${ticketId}`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ helpful })
+        })
+            .then(r => r.json())
+            .then(data => {
+                if (data.ok) {
+                    result.style.display = 'block';
+                    result.className = 'feedback-result mt-2 ' + (helpful ? 'helpful' : 'escalated');
+                    result.textContent = helpful
+                        ? '✅ Great! Ticket marked as Resolved. Thanks for your feedback!'
+                        : '🔔 Ticket escalated to the support team for manual review.';
+                    btnH.parentElement.parentElement.style.display = 'none';
+                } else {
+                    alert('Error: ' + data.error);
+                    btnH.disabled = btnN.disabled = false;
+                }
+            })
+            .catch(() => {
+                alert('Network error. Please try again.');
+                btnH.disabled = btnN.disabled = false;
+            });
+    }
+
+    function goToTicket() {
+        const tid = document.getElementById('ticket_id_input').value;
+        if (tid) window.location.href = `/ticket/${tid}`;
+    }
+
+    // Loading spinner on submit
+    document.getElementById('ticket-form').addEventListener('submit', function () {
+        const btn = document.getElementById('submit-btn');
+        btn.innerHTML = '<span class="spinner"></span> Analysing with AI…';
+        btn.disabled = true;
+    });
+</script>
+{% endblock %}

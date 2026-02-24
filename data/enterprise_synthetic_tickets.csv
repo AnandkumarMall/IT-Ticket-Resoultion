@@ -1,0 +1,301 @@
+ticket_id,description,category,priority,resolution
+1,VPN login failing with error code 812 on desktop,VPN,Low,"Clear cached VPN credentials, reauthenticate and verify MFA configuration"
+2,Frequent VPN disconnections while working from office network,VPN,High,"Clear cached VPN credentials, reauthenticate and verify MFA configuration"
+3,MFA authentication failing during VPN login,VPN,High,"Clear cached VPN credentials, reauthenticate and verify MFA configuration"
+4,MFA authentication failing during VPN login,VPN,High,"Clear cached VPN credentials, reauthenticate and verify MFA configuration"
+5,Unable to connect to corporate VPN after password reset on Windows 11,VPN,Low,"Clear cached VPN credentials, reauthenticate and verify MFA configuration"
+6,VPN access denied after recent security update,VPN,Medium,"Clear cached VPN credentials, reauthenticate and verify MFA configuration"
+7,Unable to connect to corporate VPN after password reset on Windows 11,VPN,Medium,"Clear cached VPN credentials, reauthenticate and verify MFA configuration"
+8,MFA authentication failing during VPN login,VPN,Low,"Clear cached VPN credentials, reauthenticate and verify MFA configuration"
+9,MFA authentication failing during VPN login,VPN,High,"Clear cached VPN credentials, reauthenticate and verify MFA configuration"
+10,VPN access denied after recent security update,VPN,High,"Clear cached VPN credentials, reauthenticate and verify MFA configuration"
+11,Unable to connect to corporate VPN after password reset on Windows 10,VPN,High,"Clear cached VPN credentials, reauthenticate and verify MFA configuration"
+12,MFA authentication failing during VPN login,VPN,Low,"Clear cached VPN credentials, reauthenticate and verify MFA configuration"
+13,MFA authentication failing during VPN login,VPN,Medium,"Clear cached VPN credentials, reauthenticate and verify MFA configuration"
+14,MFA authentication failing during VPN login,VPN,Low,"Clear cached VPN credentials, reauthenticate and verify MFA configuration"
+15,VPN login failing with error code 720 on office workstation,VPN,High,"Clear cached VPN credentials, reauthenticate and verify MFA configuration"
+16,Unable to connect to corporate VPN after password reset on Ubuntu 22.04,VPN,Low,"Clear cached VPN credentials, reauthenticate and verify MFA configuration"
+17,VPN access denied after recent security update,VPN,Low,"Clear cached VPN credentials, reauthenticate and verify MFA configuration"
+18,Unable to connect to corporate VPN after password reset on Windows 11,VPN,Low,"Clear cached VPN credentials, reauthenticate and verify MFA configuration"
+19,MFA authentication failing during VPN login,VPN,Low,"Clear cached VPN credentials, reauthenticate and verify MFA configuration"
+20,Frequent VPN disconnections while working from office network,VPN,High,"Clear cached VPN credentials, reauthenticate and verify MFA configuration"
+21,Frequent VPN disconnections while working from remote location,VPN,Low,"Clear cached VPN credentials, reauthenticate and verify MFA configuration"
+22,Frequent VPN disconnections while working from remote location,VPN,Medium,"Clear cached VPN credentials, reauthenticate and verify MFA configuration"
+23,Frequent VPN disconnections while working from office network,VPN,Medium,"Clear cached VPN credentials, reauthenticate and verify MFA configuration"
+24,MFA authentication failing during VPN login,VPN,Medium,"Clear cached VPN credentials, reauthenticate and verify MFA configuration"
+25,MFA authentication failing during VPN login,VPN,Medium,"Clear cached VPN credentials, reauthenticate and verify MFA configuration"
+26,VPN login failing with error code 691 on desktop,VPN,High,"Clear cached VPN credentials, reauthenticate and verify MFA configuration"
+27,Frequent VPN disconnections while working from home network,VPN,High,"Clear cached VPN credentials, reauthenticate and verify MFA configuration"
+28,VPN login failing with error code 720 on office workstation,VPN,High,"Clear cached VPN credentials, reauthenticate and verify MFA configuration"
+29,VPN access denied after recent security update,VPN,Medium,"Clear cached VPN credentials, reauthenticate and verify MFA configuration"
+30,VPN access denied after recent security update,VPN,Medium,"Clear cached VPN credentials, reauthenticate and verify MFA configuration"
+31,VPN access denied after recent security update,VPN,High,"Clear cached VPN credentials, reauthenticate and verify MFA configuration"
+32,Frequent VPN disconnections while working from remote location,VPN,Medium,"Clear cached VPN credentials, reauthenticate and verify MFA configuration"
+33,VPN access denied after recent security update,VPN,Low,"Clear cached VPN credentials, reauthenticate and verify MFA configuration"
+34,MFA authentication failing during VPN login,VPN,Medium,"Clear cached VPN credentials, reauthenticate and verify MFA configuration"
+35,VPN login failing with error code 691 on office workstation,VPN,Medium,"Clear cached VPN credentials, reauthenticate and verify MFA configuration"
+36,Unable to connect to corporate VPN after password reset on Windows 11,VPN,High,"Clear cached VPN credentials, reauthenticate and verify MFA configuration"
+37,MFA authentication failing during VPN login,VPN,High,"Clear cached VPN credentials, reauthenticate and verify MFA configuration"
+38,VPN access denied after recent security update,VPN,High,"Clear cached VPN credentials, reauthenticate and verify MFA configuration"
+39,Unable to connect to corporate VPN after password reset on MacOS Ventura,VPN,Low,"Clear cached VPN credentials, reauthenticate and verify MFA configuration"
+40,VPN login failing with error code 720 on desktop,VPN,Medium,"Clear cached VPN credentials, reauthenticate and verify MFA configuration"
+41,Unable to connect to corporate VPN after password reset on Windows 11,VPN,High,"Clear cached VPN credentials, reauthenticate and verify MFA configuration"
+42,Frequent VPN disconnections while working from office network,VPN,Medium,"Clear cached VPN credentials, reauthenticate and verify MFA configuration"
+43,Unable to connect to corporate VPN after password reset on Windows 11,VPN,Medium,"Clear cached VPN credentials, reauthenticate and verify MFA configuration"
+44,Unable to connect to corporate VPN after password reset on MacOS Ventura,VPN,Medium,"Clear cached VPN credentials, reauthenticate and verify MFA configuration"
+45,Unable to connect to corporate VPN after password reset on Windows 10,VPN,Low,"Clear cached VPN credentials, reauthenticate and verify MFA configuration"
+46,Unable to connect to corporate VPN after password reset on MacOS Ventura,VPN,Medium,"Clear cached VPN credentials, reauthenticate and verify MFA configuration"
+47,Unable to connect to corporate VPN after password reset on MacOS Ventura,VPN,Medium,"Clear cached VPN credentials, reauthenticate and verify MFA configuration"
+48,VPN access denied after recent security update,VPN,High,"Clear cached VPN credentials, reauthenticate and verify MFA configuration"
+49,MFA authentication failing during VPN login,VPN,Low,"Clear cached VPN credentials, reauthenticate and verify MFA configuration"
+50,VPN login failing with error code 691 on desktop,VPN,High,"Clear cached VPN credentials, reauthenticate and verify MFA configuration"
+51,VPN access denied after recent security update,VPN,High,"Clear cached VPN credentials, reauthenticate and verify MFA configuration"
+52,VPN login failing with error code 720 on laptop,VPN,Medium,"Clear cached VPN credentials, reauthenticate and verify MFA configuration"
+53,Frequent VPN disconnections while working from office network,VPN,Medium,"Clear cached VPN credentials, reauthenticate and verify MFA configuration"
+54,Unable to connect to corporate VPN after password reset on MacOS Ventura,VPN,Low,"Clear cached VPN credentials, reauthenticate and verify MFA configuration"
+55,VPN access denied after recent security update,VPN,Low,"Clear cached VPN credentials, reauthenticate and verify MFA configuration"
+56,VPN access denied after recent security update,VPN,High,"Clear cached VPN credentials, reauthenticate and verify MFA configuration"
+57,VPN login failing with error code 720 on desktop,VPN,High,"Clear cached VPN credentials, reauthenticate and verify MFA configuration"
+58,Frequent VPN disconnections while working from remote location,VPN,Medium,"Clear cached VPN credentials, reauthenticate and verify MFA configuration"
+59,Unable to connect to corporate VPN after password reset on Windows 11,VPN,Low,"Clear cached VPN credentials, reauthenticate and verify MFA configuration"
+60,MFA authentication failing during VPN login,VPN,High,"Clear cached VPN credentials, reauthenticate and verify MFA configuration"
+61,Unable to login to domain after password expiration,Login,Medium,Reset password via admin console and unlock user account in Active Directory
+62,Unable to login to domain after password expiration,Login,Low,Reset password via admin console and unlock user account in Active Directory
+63,Active Directory sync issue preventing login,Login,High,Reset password via admin console and unlock user account in Active Directory
+64,SSO authentication failing for internal portal,Login,High,Reset password via admin console and unlock user account in Active Directory
+65,SSO authentication failing for internal portal,Login,High,Reset password via admin console and unlock user account in Active Directory
+66,Unable to login to domain after password expiration,Login,Medium,Reset password via admin console and unlock user account in Active Directory
+67,Forgot Windows system login password on desktop,Login,Medium,Reset password via admin console and unlock user account in Active Directory
+68,Unable to login to domain after password expiration,Login,Low,Reset password via admin console and unlock user account in Active Directory
+69,User account locked after multiple failed login attempts,Login,Low,Reset password via admin console and unlock user account in Active Directory
+70,Active Directory sync issue preventing login,Login,Low,Reset password via admin console and unlock user account in Active Directory
+71,Forgot Windows system login password on desktop,Login,High,Reset password via admin console and unlock user account in Active Directory
+72,SSO authentication failing for internal portal,Login,Low,Reset password via admin console and unlock user account in Active Directory
+73,Active Directory sync issue preventing login,Login,Medium,Reset password via admin console and unlock user account in Active Directory
+74,Unable to login to domain after password expiration,Login,Low,Reset password via admin console and unlock user account in Active Directory
+75,Unable to login to domain after password expiration,Login,Medium,Reset password via admin console and unlock user account in Active Directory
+76,Active Directory sync issue preventing login,Login,High,Reset password via admin console and unlock user account in Active Directory
+77,SSO authentication failing for internal portal,Login,High,Reset password via admin console and unlock user account in Active Directory
+78,User account locked after multiple failed login attempts,Login,Medium,Reset password via admin console and unlock user account in Active Directory
+79,Unable to login to domain after password expiration,Login,Medium,Reset password via admin console and unlock user account in Active Directory
+80,Forgot Windows system login password on laptop,Login,Low,Reset password via admin console and unlock user account in Active Directory
+81,SSO authentication failing for internal portal,Login,Low,Reset password via admin console and unlock user account in Active Directory
+82,SSO authentication failing for internal portal,Login,Medium,Reset password via admin console and unlock user account in Active Directory
+83,Unable to login to domain after password expiration,Login,Low,Reset password via admin console and unlock user account in Active Directory
+84,SSO authentication failing for internal portal,Login,Low,Reset password via admin console and unlock user account in Active Directory
+85,User account locked after multiple failed login attempts,Login,High,Reset password via admin console and unlock user account in Active Directory
+86,User account locked after multiple failed login attempts,Login,High,Reset password via admin console and unlock user account in Active Directory
+87,SSO authentication failing for internal portal,Login,Medium,Reset password via admin console and unlock user account in Active Directory
+88,User account locked after multiple failed login attempts,Login,Medium,Reset password via admin console and unlock user account in Active Directory
+89,Unable to login to domain after password expiration,Login,High,Reset password via admin console and unlock user account in Active Directory
+90,Active Directory sync issue preventing login,Login,High,Reset password via admin console and unlock user account in Active Directory
+91,Unable to login to domain after password expiration,Login,Medium,Reset password via admin console and unlock user account in Active Directory
+92,Unable to login to domain after password expiration,Login,Low,Reset password via admin console and unlock user account in Active Directory
+93,User account locked after multiple failed login attempts,Login,High,Reset password via admin console and unlock user account in Active Directory
+94,Unable to login to domain after password expiration,Login,High,Reset password via admin console and unlock user account in Active Directory
+95,Forgot Windows system login password on desktop,Login,High,Reset password via admin console and unlock user account in Active Directory
+96,User account locked after multiple failed login attempts,Login,Medium,Reset password via admin console and unlock user account in Active Directory
+97,Unable to login to domain after password expiration,Login,High,Reset password via admin console and unlock user account in Active Directory
+98,Active Directory sync issue preventing login,Login,High,Reset password via admin console and unlock user account in Active Directory
+99,SSO authentication failing for internal portal,Login,Low,Reset password via admin console and unlock user account in Active Directory
+100,User account locked after multiple failed login attempts,Login,Low,Reset password via admin console and unlock user account in Active Directory
+101,SSO authentication failing for internal portal,Login,Low,Reset password via admin console and unlock user account in Active Directory
+102,Unable to login to domain after password expiration,Login,Low,Reset password via admin console and unlock user account in Active Directory
+103,Unable to login to domain after password expiration,Login,Low,Reset password via admin console and unlock user account in Active Directory
+104,Unable to login to domain after password expiration,Login,Medium,Reset password via admin console and unlock user account in Active Directory
+105,SSO authentication failing for internal portal,Login,High,Reset password via admin console and unlock user account in Active Directory
+106,Unable to login to domain after password expiration,Login,Medium,Reset password via admin console and unlock user account in Active Directory
+107,Unable to login to domain after password expiration,Login,Low,Reset password via admin console and unlock user account in Active Directory
+108,Active Directory sync issue preventing login,Login,Medium,Reset password via admin console and unlock user account in Active Directory
+109,SSO authentication failing for internal portal,Login,High,Reset password via admin console and unlock user account in Active Directory
+110,Forgot Windows system login password on desktop,Login,Medium,Reset password via admin console and unlock user account in Active Directory
+111,Active Directory sync issue preventing login,Login,High,Reset password via admin console and unlock user account in Active Directory
+112,Forgot Windows system login password on desktop,Login,Medium,Reset password via admin console and unlock user account in Active Directory
+113,Unable to login to domain after password expiration,Login,Medium,Reset password via admin console and unlock user account in Active Directory
+114,Unable to login to domain after password expiration,Login,High,Reset password via admin console and unlock user account in Active Directory
+115,Unable to login to domain after password expiration,Login,Medium,Reset password via admin console and unlock user account in Active Directory
+116,Forgot Windows system login password on laptop,Login,High,Reset password via admin console and unlock user account in Active Directory
+117,Active Directory sync issue preventing login,Login,Low,Reset password via admin console and unlock user account in Active Directory
+118,SSO authentication failing for internal portal,Login,Medium,Reset password via admin console and unlock user account in Active Directory
+119,Unable to login to domain after password expiration,Login,High,Reset password via admin console and unlock user account in Active Directory
+120,SSO authentication failing for internal portal,Login,High,Reset password via admin console and unlock user account in Active Directory
+121,WiFi authentication failed due to security policy,WiFi,Medium,"Update network drivers, restart router and verify network security policies"
+122,Unable to detect office SSID from office workstation,WiFi,Medium,"Update network drivers, restart router and verify network security policies"
+123,Intermittent WiFi disconnection on MacOS Ventura,WiFi,Low,"Update network drivers, restart router and verify network security policies"
+124,Intermittent WiFi disconnection on Windows 11,WiFi,Medium,"Update network drivers, restart router and verify network security policies"
+125,WiFi authentication failed due to security policy,WiFi,High,"Update network drivers, restart router and verify network security policies"
+126,Intermittent WiFi disconnection on Ubuntu 22.04,WiFi,Low,"Update network drivers, restart router and verify network security policies"
+127,WiFi authentication failed due to security policy,WiFi,High,"Update network drivers, restart router and verify network security policies"
+128,Laptop not connecting to office WiFi network,WiFi,High,"Update network drivers, restart router and verify network security policies"
+129,Laptop not connecting to office WiFi network,WiFi,Medium,"Update network drivers, restart router and verify network security policies"
+130,Unable to detect office SSID from laptop,WiFi,High,"Update network drivers, restart router and verify network security policies"
+131,WiFi authentication failed due to security policy,WiFi,Low,"Update network drivers, restart router and verify network security policies"
+132,Laptop not connecting to office WiFi network,WiFi,Low,"Update network drivers, restart router and verify network security policies"
+133,Laptop not connecting to office WiFi network,WiFi,Low,"Update network drivers, restart router and verify network security policies"
+134,WiFi authentication failed due to security policy,WiFi,Medium,"Update network drivers, restart router and verify network security policies"
+135,Laptop not connecting to office WiFi network,WiFi,Low,"Update network drivers, restart router and verify network security policies"
+136,Intermittent WiFi disconnection on MacOS Ventura,WiFi,High,"Update network drivers, restart router and verify network security policies"
+137,WiFi authentication failed due to security policy,WiFi,Low,"Update network drivers, restart router and verify network security policies"
+138,Unable to detect office SSID from desktop,WiFi,High,"Update network drivers, restart router and verify network security policies"
+139,Laptop not connecting to office WiFi network,WiFi,High,"Update network drivers, restart router and verify network security policies"
+140,Laptop not connecting to office WiFi network,WiFi,Medium,"Update network drivers, restart router and verify network security policies"
+141,Intermittent WiFi disconnection on Windows 10,WiFi,Low,"Update network drivers, restart router and verify network security policies"
+142,Intermittent WiFi disconnection on Windows 10,WiFi,Low,"Update network drivers, restart router and verify network security policies"
+143,Slow internet speed on corporate wireless network,WiFi,Medium,"Update network drivers, restart router and verify network security policies"
+144,Laptop not connecting to office WiFi network,WiFi,High,"Update network drivers, restart router and verify network security policies"
+145,Unable to detect office SSID from office workstation,WiFi,High,"Update network drivers, restart router and verify network security policies"
+146,Unable to detect office SSID from laptop,WiFi,High,"Update network drivers, restart router and verify network security policies"
+147,Slow internet speed on corporate wireless network,WiFi,Low,"Update network drivers, restart router and verify network security policies"
+148,WiFi authentication failed due to security policy,WiFi,Low,"Update network drivers, restart router and verify network security policies"
+149,Slow internet speed on corporate wireless network,WiFi,Medium,"Update network drivers, restart router and verify network security policies"
+150,Unable to detect office SSID from office workstation,WiFi,Medium,"Update network drivers, restart router and verify network security policies"
+151,Laptop not connecting to office WiFi network,WiFi,Low,"Update network drivers, restart router and verify network security policies"
+152,Slow internet speed on corporate wireless network,WiFi,Medium,"Update network drivers, restart router and verify network security policies"
+153,Intermittent WiFi disconnection on Windows 11,WiFi,High,"Update network drivers, restart router and verify network security policies"
+154,Unable to detect office SSID from office workstation,WiFi,Low,"Update network drivers, restart router and verify network security policies"
+155,WiFi authentication failed due to security policy,WiFi,High,"Update network drivers, restart router and verify network security policies"
+156,Laptop not connecting to office WiFi network,WiFi,Medium,"Update network drivers, restart router and verify network security policies"
+157,Slow internet speed on corporate wireless network,WiFi,Low,"Update network drivers, restart router and verify network security policies"
+158,Laptop not connecting to office WiFi network,WiFi,Medium,"Update network drivers, restart router and verify network security policies"
+159,Intermittent WiFi disconnection on Windows 10,WiFi,High,"Update network drivers, restart router and verify network security policies"
+160,Laptop not connecting to office WiFi network,WiFi,Low,"Update network drivers, restart router and verify network security policies"
+161,Slow internet speed on corporate wireless network,WiFi,High,"Update network drivers, restart router and verify network security policies"
+162,Unable to detect office SSID from office workstation,WiFi,Medium,"Update network drivers, restart router and verify network security policies"
+163,Intermittent WiFi disconnection on Windows 10,WiFi,Medium,"Update network drivers, restart router and verify network security policies"
+164,Unable to detect office SSID from desktop,WiFi,Low,"Update network drivers, restart router and verify network security policies"
+165,Slow internet speed on corporate wireless network,WiFi,Medium,"Update network drivers, restart router and verify network security policies"
+166,Intermittent WiFi disconnection on MacOS Ventura,WiFi,High,"Update network drivers, restart router and verify network security policies"
+167,Unable to detect office SSID from laptop,WiFi,High,"Update network drivers, restart router and verify network security policies"
+168,Slow internet speed on corporate wireless network,WiFi,High,"Update network drivers, restart router and verify network security policies"
+169,Laptop not connecting to office WiFi network,WiFi,Low,"Update network drivers, restart router and verify network security policies"
+170,Slow internet speed on corporate wireless network,WiFi,High,"Update network drivers, restart router and verify network security policies"
+171,Unable to detect office SSID from laptop,WiFi,Medium,"Update network drivers, restart router and verify network security policies"
+172,Laptop not connecting to office WiFi network,WiFi,Low,"Update network drivers, restart router and verify network security policies"
+173,Intermittent WiFi disconnection on MacOS Ventura,WiFi,Medium,"Update network drivers, restart router and verify network security policies"
+174,Laptop not connecting to office WiFi network,WiFi,Medium,"Update network drivers, restart router and verify network security policies"
+175,Unable to detect office SSID from desktop,WiFi,High,"Update network drivers, restart router and verify network security policies"
+176,Slow internet speed on corporate wireless network,WiFi,Low,"Update network drivers, restart router and verify network security policies"
+177,Unable to detect office SSID from laptop,WiFi,Medium,"Update network drivers, restart router and verify network security policies"
+178,Laptop not connecting to office WiFi network,WiFi,High,"Update network drivers, restart router and verify network security policies"
+179,WiFi authentication failed due to security policy,WiFi,Low,"Update network drivers, restart router and verify network security policies"
+180,WiFi authentication failed due to security policy,WiFi,High,"Update network drivers, restart router and verify network security policies"
+181,Unable to send emails via corporate Exchange server,Email,Low,Reconfigure Outlook profile and resync with Exchange server
+182,Outlook application crashing on startup,Email,High,Reconfigure Outlook profile and resync with Exchange server
+183,Shared mailbox not accessible in Outlook,Email,Medium,Reconfigure Outlook profile and resync with Exchange server
+184,Unable to send emails via corporate Exchange server,Email,High,Reconfigure Outlook profile and resync with Exchange server
+185,Outlook application crashing on startup,Email,Low,Reconfigure Outlook profile and resync with Exchange server
+186,Microsoft Teams meeting invites not syncing,Email,Medium,Reconfigure Outlook profile and resync with Exchange server
+187,Microsoft Teams meeting invites not syncing,Email,High,Reconfigure Outlook profile and resync with Exchange server
+188,Outlook application crashing on startup,Email,Low,Reconfigure Outlook profile and resync with Exchange server
+189,Microsoft Teams meeting invites not syncing,Email,Low,Reconfigure Outlook profile and resync with Exchange server
+190,Outlook application crashing on startup,Email,High,Reconfigure Outlook profile and resync with Exchange server
+191,Shared mailbox not accessible in Outlook,Email,Low,Reconfigure Outlook profile and resync with Exchange server
+192,Shared mailbox not accessible in Outlook,Email,High,Reconfigure Outlook profile and resync with Exchange server
+193,Shared mailbox not accessible in Outlook,Email,High,Reconfigure Outlook profile and resync with Exchange server
+194,Outlook application crashing on startup,Email,Medium,Reconfigure Outlook profile and resync with Exchange server
+195,Microsoft Teams meeting invites not syncing,Email,Low,Reconfigure Outlook profile and resync with Exchange server
+196,Unable to send emails via corporate Exchange server,Email,High,Reconfigure Outlook profile and resync with Exchange server
+197,Unable to send emails via corporate Exchange server,Email,High,Reconfigure Outlook profile and resync with Exchange server
+198,Outlook application crashing on startup,Email,Low,Reconfigure Outlook profile and resync with Exchange server
+199,Unable to send emails via corporate Exchange server,Email,Medium,Reconfigure Outlook profile and resync with Exchange server
+200,Emails stuck in outbox on Windows 11,Email,High,Reconfigure Outlook profile and resync with Exchange server
+201,Microsoft Teams meeting invites not syncing,Email,Low,Reconfigure Outlook profile and resync with Exchange server
+202,Outlook application crashing on startup,Email,Medium,Reconfigure Outlook profile and resync with Exchange server
+203,Emails stuck in outbox on MacOS Ventura,Email,Medium,Reconfigure Outlook profile and resync with Exchange server
+204,Emails stuck in outbox on Windows 10,Email,Low,Reconfigure Outlook profile and resync with Exchange server
+205,Shared mailbox not accessible in Outlook,Email,Low,Reconfigure Outlook profile and resync with Exchange server
+206,Emails stuck in outbox on Windows 11,Email,High,Reconfigure Outlook profile and resync with Exchange server
+207,Unable to send emails via corporate Exchange server,Email,Low,Reconfigure Outlook profile and resync with Exchange server
+208,Microsoft Teams meeting invites not syncing,Email,Medium,Reconfigure Outlook profile and resync with Exchange server
+209,Microsoft Teams meeting invites not syncing,Email,Low,Reconfigure Outlook profile and resync with Exchange server
+210,Unable to send emails via corporate Exchange server,Email,Low,Reconfigure Outlook profile and resync with Exchange server
+211,Shared mailbox not accessible in Outlook,Email,Low,Reconfigure Outlook profile and resync with Exchange server
+212,Emails stuck in outbox on Windows 11,Email,Low,Reconfigure Outlook profile and resync with Exchange server
+213,Shared mailbox not accessible in Outlook,Email,Medium,Reconfigure Outlook profile and resync with Exchange server
+214,Emails stuck in outbox on Ubuntu 22.04,Email,Low,Reconfigure Outlook profile and resync with Exchange server
+215,Emails stuck in outbox on MacOS Ventura,Email,High,Reconfigure Outlook profile and resync with Exchange server
+216,Shared mailbox not accessible in Outlook,Email,High,Reconfigure Outlook profile and resync with Exchange server
+217,Emails stuck in outbox on Windows 10,Email,High,Reconfigure Outlook profile and resync with Exchange server
+218,Microsoft Teams meeting invites not syncing,Email,High,Reconfigure Outlook profile and resync with Exchange server
+219,Emails stuck in outbox on Windows 10,Email,High,Reconfigure Outlook profile and resync with Exchange server
+220,Outlook application crashing on startup,Email,Medium,Reconfigure Outlook profile and resync with Exchange server
+221,Outlook application crashing on startup,Email,Medium,Reconfigure Outlook profile and resync with Exchange server
+222,Shared mailbox not accessible in Outlook,Email,Medium,Reconfigure Outlook profile and resync with Exchange server
+223,Emails stuck in outbox on Ubuntu 22.04,Email,Low,Reconfigure Outlook profile and resync with Exchange server
+224,Shared mailbox not accessible in Outlook,Email,Low,Reconfigure Outlook profile and resync with Exchange server
+225,Unable to send emails via corporate Exchange server,Email,Medium,Reconfigure Outlook profile and resync with Exchange server
+226,Unable to send emails via corporate Exchange server,Email,High,Reconfigure Outlook profile and resync with Exchange server
+227,Unable to send emails via corporate Exchange server,Email,Medium,Reconfigure Outlook profile and resync with Exchange server
+228,Shared mailbox not accessible in Outlook,Email,Medium,Reconfigure Outlook profile and resync with Exchange server
+229,Emails stuck in outbox on Ubuntu 22.04,Email,Medium,Reconfigure Outlook profile and resync with Exchange server
+230,Emails stuck in outbox on Windows 10,Email,Medium,Reconfigure Outlook profile and resync with Exchange server
+231,Emails stuck in outbox on Ubuntu 22.04,Email,Medium,Reconfigure Outlook profile and resync with Exchange server
+232,Microsoft Teams meeting invites not syncing,Email,High,Reconfigure Outlook profile and resync with Exchange server
+233,Outlook application crashing on startup,Email,Medium,Reconfigure Outlook profile and resync with Exchange server
+234,Emails stuck in outbox on Ubuntu 22.04,Email,Medium,Reconfigure Outlook profile and resync with Exchange server
+235,Outlook application crashing on startup,Email,High,Reconfigure Outlook profile and resync with Exchange server
+236,Microsoft Teams meeting invites not syncing,Email,Low,Reconfigure Outlook profile and resync with Exchange server
+237,Shared mailbox not accessible in Outlook,Email,Medium,Reconfigure Outlook profile and resync with Exchange server
+238,Unable to send emails via corporate Exchange server,Email,Low,Reconfigure Outlook profile and resync with Exchange server
+239,Unable to send emails via corporate Exchange server,Email,Medium,Reconfigure Outlook profile and resync with Exchange server
+240,Emails stuck in outbox on MacOS Ventura,Email,Low,Reconfigure Outlook profile and resync with Exchange server
+241,Access denied to shared network drive,Access Control,Low,Grant appropriate permissions and verify role-based access control settings
+242,File server access restricted unexpectedly,Access Control,Medium,Grant appropriate permissions and verify role-based access control settings
+243,Access denied to shared network drive,Access Control,Low,Grant appropriate permissions and verify role-based access control settings
+244,Permission error while accessing SharePoint site,Access Control,Medium,Grant appropriate permissions and verify role-based access control settings
+245,Permission error while accessing SharePoint site,Access Control,Low,Grant appropriate permissions and verify role-based access control settings
+246,User unable to access HR portal,Access Control,High,Grant appropriate permissions and verify role-based access control settings
+247,Unauthorized access error in internal application,Access Control,Medium,Grant appropriate permissions and verify role-based access control settings
+248,User unable to access HR portal,Access Control,High,Grant appropriate permissions and verify role-based access control settings
+249,Permission error while accessing SharePoint site,Access Control,Low,Grant appropriate permissions and verify role-based access control settings
+250,Unauthorized access error in internal application,Access Control,Low,Grant appropriate permissions and verify role-based access control settings
+251,Access denied to shared network drive,Access Control,Medium,Grant appropriate permissions and verify role-based access control settings
+252,Permission error while accessing SharePoint site,Access Control,Low,Grant appropriate permissions and verify role-based access control settings
+253,Permission error while accessing SharePoint site,Access Control,High,Grant appropriate permissions and verify role-based access control settings
+254,Access denied to shared network drive,Access Control,High,Grant appropriate permissions and verify role-based access control settings
+255,Permission error while accessing SharePoint site,Access Control,Medium,Grant appropriate permissions and verify role-based access control settings
+256,File server access restricted unexpectedly,Access Control,Low,Grant appropriate permissions and verify role-based access control settings
+257,File server access restricted unexpectedly,Access Control,Low,Grant appropriate permissions and verify role-based access control settings
+258,User unable to access HR portal,Access Control,Low,Grant appropriate permissions and verify role-based access control settings
+259,File server access restricted unexpectedly,Access Control,High,Grant appropriate permissions and verify role-based access control settings
+260,Unauthorized access error in internal application,Access Control,Low,Grant appropriate permissions and verify role-based access control settings
+261,User unable to access HR portal,Access Control,Low,Grant appropriate permissions and verify role-based access control settings
+262,User unable to access HR portal,Access Control,Low,Grant appropriate permissions and verify role-based access control settings
+263,Access denied to shared network drive,Access Control,Medium,Grant appropriate permissions and verify role-based access control settings
+264,Unauthorized access error in internal application,Access Control,Medium,Grant appropriate permissions and verify role-based access control settings
+265,Permission error while accessing SharePoint site,Access Control,Medium,Grant appropriate permissions and verify role-based access control settings
+266,File server access restricted unexpectedly,Access Control,Low,Grant appropriate permissions and verify role-based access control settings
+267,Access denied to shared network drive,Access Control,Low,Grant appropriate permissions and verify role-based access control settings
+268,User unable to access HR portal,Access Control,Low,Grant appropriate permissions and verify role-based access control settings
+269,User unable to access HR portal,Access Control,High,Grant appropriate permissions and verify role-based access control settings
+270,Permission error while accessing SharePoint site,Access Control,Medium,Grant appropriate permissions and verify role-based access control settings
+271,Unauthorized access error in internal application,Access Control,High,Grant appropriate permissions and verify role-based access control settings
+272,Permission error while accessing SharePoint site,Access Control,High,Grant appropriate permissions and verify role-based access control settings
+273,File server access restricted unexpectedly,Access Control,Medium,Grant appropriate permissions and verify role-based access control settings
+274,User unable to access HR portal,Access Control,Medium,Grant appropriate permissions and verify role-based access control settings
+275,Permission error while accessing SharePoint site,Access Control,Medium,Grant appropriate permissions and verify role-based access control settings
+276,Permission error while accessing SharePoint site,Access Control,Medium,Grant appropriate permissions and verify role-based access control settings
+277,Access denied to shared network drive,Access Control,High,Grant appropriate permissions and verify role-based access control settings
+278,User unable to access HR portal,Access Control,High,Grant appropriate permissions and verify role-based access control settings
+279,File server access restricted unexpectedly,Access Control,High,Grant appropriate permissions and verify role-based access control settings
+280,Access denied to shared network drive,Access Control,Low,Grant appropriate permissions and verify role-based access control settings
+281,User unable to access HR portal,Access Control,High,Grant appropriate permissions and verify role-based access control settings
+282,Permission error while accessing SharePoint site,Access Control,Medium,Grant appropriate permissions and verify role-based access control settings
+283,Permission error while accessing SharePoint site,Access Control,High,Grant appropriate permissions and verify role-based access control settings
+284,Permission error while accessing SharePoint site,Access Control,Medium,Grant appropriate permissions and verify role-based access control settings
+285,Unauthorized access error in internal application,Access Control,Medium,Grant appropriate permissions and verify role-based access control settings
+286,User unable to access HR portal,Access Control,Low,Grant appropriate permissions and verify role-based access control settings
+287,File server access restricted unexpectedly,Access Control,Low,Grant appropriate permissions and verify role-based access control settings
+288,Unauthorized access error in internal application,Access Control,Low,Grant appropriate permissions and verify role-based access control settings
+289,Permission error while accessing SharePoint site,Access Control,Low,Grant appropriate permissions and verify role-based access control settings
+290,File server access restricted unexpectedly,Access Control,Medium,Grant appropriate permissions and verify role-based access control settings
+291,File server access restricted unexpectedly,Access Control,High,Grant appropriate permissions and verify role-based access control settings
+292,Permission error while accessing SharePoint site,Access Control,Low,Grant appropriate permissions and verify role-based access control settings
+293,File server access restricted unexpectedly,Access Control,High,Grant appropriate permissions and verify role-based access control settings
+294,Unauthorized access error in internal application,Access Control,Low,Grant appropriate permissions and verify role-based access control settings
+295,Access denied to shared network drive,Access Control,High,Grant appropriate permissions and verify role-based access control settings
+296,Unauthorized access error in internal application,Access Control,Low,Grant appropriate permissions and verify role-based access control settings
+297,User unable to access HR portal,Access Control,High,Grant appropriate permissions and verify role-based access control settings
+298,Unauthorized access error in internal application,Access Control,Medium,Grant appropriate permissions and verify role-based access control settings
+299,File server access restricted unexpectedly,Access Control,Low,Grant appropriate permissions and verify role-based access control settings
+300,Unauthorized access error in internal application,Access Control,Medium,Grant appropriate permissions and verify role-based access control settings

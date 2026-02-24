@@ -1,0 +1,107 @@
+{% extends "base.html" %}
+{% block title %}Login — IT Ticket Engine{% endblock %}
+
+{% block content %}
+<div class="auth-wrapper">
+    <div class="auth-card">
+
+        <h2>🔐 Authentication</h2>
+        <p class="subtitle">Log in or create a new account to continue</p>
+
+        <!-- Role Toggle -->
+        <div class="role-toggle">
+            <input type="radio" id="role-user" name="global-role" value="User" checked />
+            <label for="role-user">👤 User</label>
+            <input type="radio" id="role-admin" name="global-role" value="Admin" />
+            <label for="role-admin">🛡️ Admin</label>
+        </div>
+
+        <!-- TABS -->
+        <div class="tabs">
+            <button class="tab-btn active" data-tab="login-tab">🔑 Login</button>
+            <button class="tab-btn" data-tab="signup-tab">📝 Sign Up</button>
+        </div>
+
+        <!-- ── LOGIN TAB ──────────────────────────────────────────── -->
+        <div id="login-tab" class="tab-pane active">
+            <form method="POST" action="{{ url_for('login') }}" id="login-form">
+                <input type="hidden" name="action" value="login" />
+                <input type="hidden" name="role" id="login-role-val" value="User" />
+
+                <div class="form-group">
+                    <label class="form-label" for="email">Email address</label>
+                    <input class="form-control" type="email" id="email" name="email" placeholder="you@company.com"
+                        required autocomplete="email" />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="password">Password</label>
+                    <input class="form-control" type="password" id="password" name="password" placeholder="••••••••"
+                        required autocomplete="current-password" />
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-full mt-2" id="login-btn">
+                    🔑 Login
+                </button>
+            </form>
+        </div>
+
+        <!-- ── SIGN UP TAB ────────────────────────────────────────── -->
+        <div id="signup-tab" class="tab-pane">
+            <form method="POST" action="{{ url_for('login') }}" id="signup-form">
+                <input type="hidden" name="action" value="signup" />
+                <input type="hidden" name="role" id="signup-role-val" value="User" />
+
+                <div class="form-group">
+                    <label class="form-label" for="name">Full Name *</label>
+                    <input class="form-control" type="text" id="name" name="name" placeholder="Jane Doe" required
+                        autocomplete="name" />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="signup_email">Email *</label>
+                    <input class="form-control" type="email" id="signup_email" name="signup_email"
+                        placeholder="jane@company.com" required autocomplete="email" />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="department">Department</label>
+                    <input class="form-control" type="text" id="department" name="department"
+                        placeholder="IT / HR / Finance…" />
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label" for="signup_password">Password *</label>
+                        <input class="form-control" type="password" id="signup_password" name="signup_password"
+                            placeholder="••••••••" required />
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="confirm_password">Confirm *</label>
+                        <input class="form-control" type="password" id="confirm_password" name="confirm_password"
+                            placeholder="••••••••" required />
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-full mt-2">
+                    📝 Create Account
+                </button>
+            </form>
+        </div>
+
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    // Sync role toggle → hidden fields
+    document.querySelectorAll('input[name="global-role"]').forEach(radio => {
+        radio.addEventListener('change', () => {
+            const val = radio.value;
+            document.getElementById('login-role-val').value = val;
+            document.getElementById('signup-role-val').value = val;
+        });
+    });
+</script>
+{% endblock %}

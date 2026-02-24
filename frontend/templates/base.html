@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>{% block title %}IT Ticket Resolution Engine{% endblock %}</title>
+  <meta name="description" content="AI-powered IT ticket resolution using TF-IDF similarity matching."/>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"/>
+</head>
+<body>
+
+<!-- ── NAVBAR ──────────────────────────────────────────────────── -->
+<nav class="navbar">
+  <a href="{{ url_for('index') }}" class="nav-brand">
+    <span class="emoji">🎫</span>
+    <span>IT Ticket Engine</span>
+  </a>
+
+  <div class="nav-links">
+    {% if session.get('logged_in') %}
+      <span class="nav-info">
+        {% if session.role == 'Admin' %}🛡️{% else %}👤{% endif %}
+        &nbsp;<strong>{{ session.user_name }}</strong>
+        &nbsp;&middot;&nbsp;{{ session.role }}
+      </span>
+      {% if session.role == 'User' %}
+        <a href="{{ url_for('dashboard') }}" class="btn-nav btn-nav-ghost">📋 Dashboard</a>
+      {% else %}
+        <a href="{{ url_for('admin') }}" class="btn-nav btn-nav-ghost">🛡️ Admin Panel</a>
+      {% endif %}
+      <a href="{{ url_for('logout') }}" class="btn-nav btn-nav-danger">🚪 Logout</a>
+    {% else %}
+      <a href="{{ url_for('login') }}" class="btn-nav btn-nav-ghost">🔐 Login</a>
+    {% endif %}
+  </div>
+</nav>
+
+<!-- ── FLASH MESSAGES ──────────────────────────────────────────── -->
+{% with messages = get_flashed_messages(with_categories=true) %}
+  {% if messages %}
+    <div class="flash-container" id="flash-container">
+      {% for category, message in messages %}
+        <div class="alert alert-{{ category }}">
+          <span>{{ message }}</span>
+          <button class="close-btn" onclick="this.parentElement.remove()">✕</button>
+        </div>
+      {% endfor %}
+    </div>
+  {% endif %}
+{% endwith %}
+
+<!-- ── PAGE CONTENT ────────────────────────────────────────────── -->
+{% block content %}{% endblock %}
+
+<!-- ── JS ─────────────────────────────────────────────────────── -->
+<script src="{{ url_for('static', filename='js/main.js') }}"></script>
+{% block extra_js %}{% endblock %}
+</body>
+</html>

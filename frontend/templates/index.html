@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+{% block title %}IT Ticket Resolution Engine — Home{% endblock %}
+
+{% block content %}
+<div class="main-content">
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-eyebrow">✨ Powered by TF-IDF NLP</div>
+        <h1>
+            Resolve IT Issues<br />
+            <span class="gradient-text">Instantly with AI</span>
+        </h1>
+        <p>
+            Submit your IT problem and receive the top‑3 most similar historical
+            resolutions in seconds — no waiting, no guessing.
+        </p>
+        <div class="hero-actions">
+            {% if session.get('logged_in') %}
+            {% if session.role == 'User' %}
+            <a href="{{ url_for('dashboard') }}" class="btn btn-primary btn-lg">📋 Go to Dashboard</a>
+            {% else %}
+            <a href="{{ url_for('admin') }}" class="btn btn-primary btn-lg">🛡️ Admin Panel</a>
+            {% endif %}
+            {% else %}
+            <a href="{{ url_for('login') }}" class="btn btn-primary btn-lg">🚀 Get Started</a>
+            <a href="{{ url_for('login') }}" class="btn btn-secondary btn-lg">🔐 Login</a>
+            {% endif %}
+        </div>
+    </section>
+
+    <!-- FEATURE CARDS -->
+    <div class="card-grid">
+        <div class="feature-card">
+            <span class="icon">🤖</span>
+            <h3>AI Suggestions</h3>
+            <p>TF‑IDF cosine similarity matches your issue against thousands of historical tickets and returns the best
+                resolutions instantly.</p>
+        </div>
+        <div class="feature-card">
+            <span class="icon">📊</span>
+            <h3>Smart Analytics</h3>
+            <p>Admins get real‑time dashboards showing open/resolved counts, category distribution, escalation rates and
+                time‑to‑resolution.</p>
+        </div>
+        <div class="feature-card">
+            <span class="icon">🔁</span>
+            <h3>Feedback Loop</h3>
+            <p>One‑click helpful/not‑helpful feedback automatically resolves or escalates tickets to the support team
+                for manual review.</p>
+        </div>
+    </div>
+
+    <!-- HOW IT WORKS -->
+    <div class="card mt-3">
+        <h2 class="section-title">⚡ How It Works</h2>
+        <div class="card-grid">
+            <div>
+                <div class="score-pill" style="margin-bottom:0.6rem;">Step 1</div>
+                <h4 style="margin-bottom:0.4rem;">Describe Your Issue</h4>
+                <p class="text-indent">Write a brief description of your IT problem — no ticket numbers or jargon
+                    needed.</p>
+            </div>
+            <div>
+                <div class="score-pill" style="margin-bottom:0.6rem;">Step 2</div>
+                <h4 style="margin-bottom:0.4rem;">AI Matches Tickets</h4>
+                <p class="text-indent">The NLP engine finds the top‑3 most similar historical tickets using TF‑IDF
+                    vectorisation.</p>
+            </div>
+            <div>
+                <div class="score-pill" style="margin-bottom:0.6rem;">Step 3</div>
+                <h4 style="margin-bottom:0.4rem;">Resolve or Escalate</h4>
+                <p class="text-indent">Mark a suggestion as helpful to resolve instantly, or escalate to a human support
+                    engineer.</p>
+            </div>
+        </div>
+    </div>
+
+</div>
+{% endblock %}

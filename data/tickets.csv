@@ -1,0 +1,51 @@
+ticket_id,description,category,priority,resolution
+1,Unable to login to corporate VPN after password reset,VPN,High,Clear cached VPN credentials and reconnect
+2,Outlook crashes immediately after opening,Email,Medium,Repair Outlook from control panel
+3,Access denied when opening shared finance folder,Access,High,Grant correct NTFS permissions
+4,Laptop not connecting to office WiFi,Network,Medium,Update WiFi drivers and restart router
+5,Blue screen error after Windows update,System,High,Uninstall recent Windows update
+6,Printer not responding from workstation,Printer,Low,Restart printer spooler service
+7,Unable to install Adobe Reader,Software,Low,Run installer as administrator
+8,VPN disconnects frequently during remote work,VPN,High,Update VPN client and check firewall rules
+9,Email attachments not downloading,Email,Medium,Clear Outlook cache and restart application
+10,Mouse not detected after system reboot,Hardware,Low,Reinstall USB drivers
+11,Password reset link not working,Login,High,Generate new password reset token
+12,Slow system performance after startup,System,Medium,Disable unnecessary startup programs
+13,Access request pending for HR portal,Access,Medium,Approve access request in admin console
+14,Printer printing blank pages,Printer,Low,Replace printer toner cartridge
+15,Unable to map network drive,Network,High,Check drive path and reconnect using correct credentials
+16,VPN login shows authentication failed,VPN,High,Verify LDAP sync and reset password
+17,Email not syncing on mobile device,Email,Medium,Reconfigure email account on mobile
+18,Application freezes when generating report,Software,Medium,Update application to latest version
+19,Keyboard keys not responding,Hardware,Low,Replace faulty keyboard
+20,Shared drive missing from File Explorer,Network,High,Remap shared network drive
+21,User account locked after multiple attempts,Login,High,Unlock account from Active Directory
+22,Unable to access CRM application,Access,High,Grant CRM role permissions
+23,Internet extremely slow in office network,Network,High,Check bandwidth usage and restart switch
+24,Printer showing offline status,Printer,Low,Reconnect printer to network
+25,Software license expired message showing,Software,Medium,Renew application license key
+26,Laptop battery not charging,Hardware,Medium,Replace battery adapter
+27,VPN works on mobile but not on laptop,VPN,Medium,Reinstall VPN client on laptop
+28,Email bounce back error while sending mail,Email,High,Check recipient address and mail server logs
+29,Forgot system login password,Login,High,Reset password via admin console
+30,System automatically restarting randomly,System,High,Scan for malware and update drivers
+31,Access denied to payroll system,Access,High,Assign payroll access group
+32,Unable to connect to remote desktop,Network,High,Enable RDP and check firewall port 3389
+33,Excel crashing while opening large file,Software,Medium,Increase Excel memory limit
+34,Laptop overheating frequently,Hardware,Medium,Clean internal cooling fan
+35,WiFi connected but no internet access,Network,High,Reset DNS configuration
+36,Printer paper jam error,Printer,Low,Remove jammed paper from tray
+37,Unable to update antivirus definitions,Software,Medium,Check internet connectivity and update server
+38,Account disabled unexpectedly,Login,High,Re-enable user account
+39,Shared folder showing read-only access,Access,Medium,Modify folder write permissions
+40,VPN client not launching,VPN,Medium,Reinstall VPN software
+41,Emails going to spam folder,Email,Medium,Whitelist domain in mail server
+42,Computer stuck on boot screen,System,High,Run startup repair tool
+43,Unable to access intranet portal,Network,High,Flush DNS and clear browser cache
+44,Printer driver not found error,Printer,Low,Install correct printer driver
+45,Application license validation failed,Software,Medium,Reactivate software license
+46,Touchpad not working on laptop,Hardware,Low,Enable touchpad from device manager
+47,Password change not reflecting immediately,Login,Medium,Force AD replication
+48,Network drive disconnects randomly,Network,Medium,Check network stability and reconnect
+49,Email search function not working,Email,Low,Rebuild Outlook search index
+50,System running slow during multitasking,System,Medium,Upgrade RAM capacity
