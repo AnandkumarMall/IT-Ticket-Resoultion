@@ -1,0 +1,18 @@
+# ============================================================
+# IT Ticket Resolution Suggestion Engine — Backend Dependencies
+# Sprint 2
+# ============================================================
+
+# Web framework
+fastapi==0.110.0
+uvicorn[standard]==0.29.0
+
+# Data validation
+pydantic[email]==2.6.4
+
+# NLP / ML (TF-IDF + cosine similarity)
+scikit-learn==1.4.1.post1
+pandas==2.2.1
+nltk==3.8.1
+
+# No LLM dependencies required.
