@@ -1,0 +1,29 @@
+# ==============================================================
+# IT Ticket Resolution Suggestion Engine — Full Requirements
+# Covers: FastAPI backend + Flask frontend + NLP/ML dependencies
+# ==============================================================
+
+# ── Web Frameworks ─────────────────────────────────────────────
+fastapi==0.110.0
+uvicorn[standard]==0.29.0
+flask==3.0.3
+gunicorn==21.2.0
+
+# ── Data Validation ────────────────────────────────────────────
+pydantic[email]==2.6.4
+
+# ── NLP / ML (TF-IDF + cosine similarity) ─────────────────────
+scikit-learn==1.4.1.post1
+pandas==2.2.1
+nltk==3.8.1
+
+# ── HTTP Client (Flask → FastAPI communication) ────────────────
+requests==2.31.0
+
+# ── Security (password hashing) ────────────────────────────────
+bcrypt==4.1.2
+
+# ── Cloud Database (PostgreSQL — only needed on cloud) ─────────
+# Locally, SQLite is used automatically (no install needed).
+# On cloud (Render, Heroku, etc.), set DATABASE_URL env var.
+psycopg2-binary==2.9.9
