@@ -12,6 +12,8 @@ Run with:
     python app.py
 """
 
+import os
+
 import requests
 from flask import (
     Flask, render_template, request, redirect,
@@ -19,9 +21,12 @@ from flask import (
 )
 
 app = Flask(__name__)
-app.secret_key = "it_ticket_engine_secret_key_2024"
 
-BASE_URL = "http://localhost:8000"
+# Secret key: set SECRET_KEY env var on cloud; falls back to dev default locally
+app.secret_key = os.environ.get("SECRET_KEY", "it_ticket_engine_secret_key_2024")
+
+# Backend URL: set BACKEND_URL env var on cloud; falls back to localhost locally
+BASE_URL = os.environ.get("BACKEND_URL", "http://localhost:8000")
 
 
 # ---------------------------------------------------------------------------
@@ -308,9 +313,11 @@ def admin_add_resolution():
 # ---------------------------------------------------------------------------
 
 if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 5000))
+    debug = os.environ.get("DEBUG", "true").lower() == "true"
     print("=" * 55)
     print("  IT Ticket Resolution Engine — Flask Frontend")
-    print("  Running on  : http://127.0.0.1:5000")
-    print("  Backend API : http://127.0.0.1:8000")
+    print(f"  Running on  : http://0.0.0.0:{port}")
+    print(f"  Backend API : {BASE_URL}")
     print("=" * 55)
-    app.run(debug=True, port=5000)
+    app.run(debug=debug, host="0.0.0.0", port=port)

@@ -3,12 +3,15 @@ auth_routes.py
 --------------
 User and Admin authentication endpoints.
 
-POST /signup   — Register a new user
-POST /login    — Authenticate a user
+POST /signup       — Register a new user
+POST /login        — Authenticate a user
 POST /admin/signup — Register a new admin
 POST /admin/login  — Authenticate an admin
+
+Passwords are hashed with bcrypt. Plain-text passwords are never stored.
 """
 
+import bcrypt
 from datetime import datetime
 
 from fastapi import APIRouter, HTTPException, status
@@ -17,6 +20,26 @@ from pydantic import BaseModel, EmailStr
 from database import get_connection
 
 router = APIRouter(tags=["Authentication"])
+
+
+# ===========================================================================
+#  PASSWORD HELPERS
+# ===========================================================================
+
+def _hash_password(plain: str) -> str:
+    """Return a bcrypt hash of the plain-text password (stored as UTF-8 string)."""
+    hashed = bcrypt.hashpw(plain.encode("utf-8"), bcrypt.gensalt())
+    return hashed.decode("utf-8")
+
+
+def _verify_password(plain: str, hashed: str) -> bool:
+    """Return True if plain matches the stored bcrypt hash.
+    Returns False (instead of crashing) if the stored value is not a valid
+    bcrypt hash — e.g. a legacy plain-text password from before this fix."""
+    try:
+        return bcrypt.checkpw(plain.encode("utf-8"), hashed.encode("utf-8"))
+    except (ValueError, Exception):
+        return False
 
 
 # ===========================================================================
@@ -55,7 +78,7 @@ class AdminLoginRequest(BaseModel):
 def user_signup(body: UserSignupRequest):
     """
     Register a new employee (user) account.
-    Passwords are stored as plain text here; hash them in production.
+    Passwords are hashed with bcrypt before being stored.
     """
     conn = get_connection()
     try:
@@ -70,12 +93,13 @@ def user_signup(body: UserSignupRequest):
             )
 
         now = datetime.utcnow().isoformat()
+        hashed_pw = _hash_password(body.password)
         conn.execute(
             """
             INSERT INTO users (name, email, department, password, created_at)
             VALUES (?, ?, ?, ?, ?)
             """,
-            (body.name, body.email, body.department, body.password, now),
+            (body.name, body.email, body.department, hashed_pw, now),
         )
         conn.commit()
         return {"message": "User registered successfully."}
@@ -88,16 +112,16 @@ def user_signup(body: UserSignupRequest):
 def user_login(body: UserLoginRequest):
     """
     Authenticate an employee. Returns basic user info on success.
-    In production, return a JWT token here.
+    Password is verified against the stored bcrypt hash.
     """
     conn = get_connection()
     try:
         row = conn.execute(
-            "SELECT id, name, email, department FROM users WHERE email = ? AND password = ?",
-            (body.email, body.password),
+            "SELECT id, name, email, department, password FROM users WHERE email = ?",
+            (body.email,),
         ).fetchone()
 
-        if not row:
+        if not row or not _verify_password(body.password, row["password"]):
             raise HTTPException(
                 status_code=status.HTTP_401_UNAUTHORIZED,
                 detail="Invalid email or password.",
@@ -122,7 +146,7 @@ def user_login(body: UserLoginRequest):
 
 @router.post("/admin/signup", status_code=status.HTTP_201_CREATED)
 def admin_signup(body: AdminSignupRequest):
-    """Register a new support-engineer (admin) account."""
+    """Register a new support-engineer (admin) account. Password is bcrypt-hashed."""
     conn = get_connection()
     try:
         existing = conn.execute(
@@ -134,12 +158,13 @@ def admin_signup(body: AdminSignupRequest):
                 detail="Admin email already registered.",
             )
 
+        hashed_pw = _hash_password(body.password)
         conn.execute(
             """
             INSERT INTO admins (name, email, department, password)
             VALUES (?, ?, ?, ?)
             """,
-            (body.name, body.email, body.department, body.password),
+            (body.name, body.email, body.department, hashed_pw),
         )
         conn.commit()
         return {"message": "Admin registered successfully."}
@@ -150,15 +175,15 @@ def admin_signup(body: AdminSignupRequest):
 
 @router.post("/admin/login")
 def admin_login(body: AdminLoginRequest):
-    """Authenticate a support engineer (admin)."""
+    """Authenticate a support engineer (admin). Verifies bcrypt password hash."""
     conn = get_connection()
     try:
         row = conn.execute(
-            "SELECT id, name, email, department FROM admins WHERE email = ? AND password = ?",
-            (body.email, body.password),
+            "SELECT id, name, email, department, password FROM admins WHERE email = ?",
+            (body.email,),
         ).fetchone()
 
-        if not row:
+        if not row or not _verify_password(body.password, row["password"]):
             raise HTTPException(
                 status_code=status.HTTP_401_UNAUTHORIZED,
                 detail="Invalid admin credentials.",

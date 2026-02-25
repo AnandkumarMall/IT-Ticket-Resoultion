@@ -10,6 +10,8 @@ Run with:
     uvicorn main:app --reload --port 8000
 """
 
+import os
+
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
@@ -17,6 +19,11 @@ from database import init_db
 from auth_routes import router as auth_router
 from ticket_routes import router as ticket_router
 from admin_routes import router as admin_router
+
+# Read allowed CORS origins from environment (comma-separated).
+# Defaults to ["*"] so local development is unchanged.
+_origins_env = os.environ.get("ALLOWED_ORIGINS", "")
+ALLOWED_ORIGINS = [o.strip() for o in _origins_env.split(",") if o.strip()] or ["*"]
 
 # ---------------------------------------------------------------------------
 # Application instance
@@ -32,11 +39,12 @@ app = FastAPI(
 )
 
 # ---------------------------------------------------------------------------
-# CORS — allow all origins during development
+# CORS — configurable via ALLOWED_ORIGINS env var (defaults to ["*"] locally)
+# On cloud: set ALLOWED_ORIGINS=https://your-flask-app.onrender.com
 # ---------------------------------------------------------------------------
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],       # Restrict to specific frontend origins in production
+    allow_origins=ALLOWED_ORIGINS,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],

@@ -3,9 +3,11 @@ ticket_routes.py
 ----------------
 User-facing ticket endpoints.
 
-POST   /tickets              — Submit new ticket + get NLP suggestions
-POST   /tickets/{id}/feedback — Mark ticket as helpful or not
-GET    /tickets/{id}         — View ticket details + status
+POST   /tickets                   — Submit new ticket + get NLP suggestions
+POST   /tickets/{id}/feedback     — Mark ticket as helpful or not
+GET    /tickets/{id}              — View ticket details + status
+GET    /tickets/{id}/resolutions  — All resolutions for a ticket
+GET    /user/{user_id}/tickets    — All tickets submitted by a user
 """
 
 from datetime import datetime
@@ -17,6 +19,20 @@ from database import get_connection
 from nlp_service import get_top_similar_tickets
 
 router = APIRouter(tags=["Tickets"])
+
+
+@router.get("/user/{user_id}/tickets")
+def get_user_tickets(user_id: int):
+    """Return all tickets for a given user, newest first."""
+    conn = get_connection()
+    try:
+        rows = conn.execute(
+            "SELECT * FROM tickets WHERE user_id = ? ORDER BY id DESC",
+            (user_id,),
+        ).fetchall()
+        return {"tickets": [dict(r) for r in rows]}
+    finally:
+        conn.close()
 
 
 # ===========================================================================
@@ -216,6 +232,37 @@ def get_ticket(ticket_id: int):
         return {
             "ticket": dict(ticket),
             "resolution": dict(resolution) if resolution else None,
+        }
+
+    finally:
+        conn.close()
+
+
+@router.get("/tickets/{ticket_id}/resolutions")
+def get_ticket_resolutions(ticket_id: int):
+    """
+    Return ALL resolution rows for a ticket (NLP + manual).
+    Used by the admin dashboard to preview existing suggestions.
+    """
+    conn = get_connection()
+    try:
+        ticket = conn.execute(
+            "SELECT id FROM tickets WHERE id = ?", (ticket_id,)
+        ).fetchone()
+        if not ticket:
+            raise HTTPException(
+                status_code=status.HTTP_404_NOT_FOUND,
+                detail=f"Ticket {ticket_id} not found.",
+            )
+
+        rows = conn.execute(
+            "SELECT resolution_text, resolved_date FROM resolutions WHERE ticket_id = ? ORDER BY id",
+            (ticket_id,),
+        ).fetchall()
+
+        return {
+            "ticket_id":   ticket_id,
+            "resolutions": [dict(r) for r in rows],
         }
 
     finally:

@@ -1,6 +1,5 @@
 # ============================================================
 # IT Ticket Resolution Suggestion Engine — Backend Dependencies
-# Sprint 2
 # ============================================================
 
 # Web framework
@@ -15,4 +14,9 @@ scikit-learn==1.4.1.post1
 pandas==2.2.1
 nltk==3.8.1
 
-# No LLM dependencies required.
+# Security — password hashing
+bcrypt==4.1.2
+
+# Cloud database — PostgreSQL support (used when DATABASE_URL env var is set)
+# Not needed for local SQLite development.
+psycopg2-binary==2.9.9
